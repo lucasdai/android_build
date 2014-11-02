@@ -1322,6 +1322,16 @@ function pez {
     return $retval
 }
 
+
+function jedroid()
+{
+    cd $ANDROID_PRODUCT_OUT
+	mkdir jedroidimage/
+	cp -fr root/* jedroidimage/
+	cp -fr system/ jedroidimage/
+	cd -
+}
+
 if [ "x$SHELL" != "x/bin/bash" ]; then
     case `ps -o command -p $$` in
         *bash*)
